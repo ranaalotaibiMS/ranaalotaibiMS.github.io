@@ -1,203 +1,272 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
-
-<HTML><HEAD><TITLE> Rana Alotaibi</TITLE> 
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rana Alotaibi</title>
+<meta name="description" content="Rana Alotaibi, Senior Scientist at Microsoft Gray Systems Lab. Research in query optimization, hybrid stores, and self-tuning data systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <style>
-    h3 {
-        color: rgb(3, 3, 114); 
-    }
-    h2{
-        color:  rgb(3, 3, 114); 
-    }
-    .employment {
-    font-size: 16px;
-    }
-    .company {
-    font-weight: bold;
-    }
-   .info-list {
-    padding: 0;
-   }
-   .info-list li {
-    margin-bottom: 5px;
-   }
+:root {
+  --bg: #ffffff; --band: #f7f7f8; --ink: #3f4148; --strong: #1f2128; --muted: #85878f;
+  --line: #e4e4e8; --frame: #8a8c94; --link: #1d5fa8; --chip-on: #3f4148;
+  --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 15.5px/1.6 var(--sans); }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; border-radius: 2px; }
+b, strong { font-weight: 600; color: var(--strong); }
+p { margin: 0 0 .9em; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.wrap { max-width: 1400px; margin: 0 auto; padding-inline: max(16px, 4vw); }
+
+h2 {
+  font: 400 19px/1.2 var(--serif); text-transform: uppercase; letter-spacing: .09em;
+  color: var(--muted); margin: 0 0 .85em;
+}
+
+/* ---------- header band ---------- */
+.band { background: var(--band); padding-block: 32px; margin-top: 16px; }
+.header { display: grid; gap: 10px; }
+.bio { margin-top: 14px; }
+.bio p:last-child { margin-bottom: 0; }
+.who {
+  margin: 0;
+  font: 600 26px/1.2 var(--serif); text-transform: uppercase; letter-spacing: .16em; color: var(--strong);
+}
+.role { margin: -4px 0 0; font-size: 16px; color: var(--strong); }
+.profiles { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+
+/* ---------- framed focus box ---------- */
+.focus { border: 2px solid var(--frame); padding: 22px 26px; margin-block: 28px; }
+.focus h2 { margin-bottom: .5em; }
+.focus p:last-child { margin-bottom: 0; }
+
+/* ---------- three-column body ---------- */
+.body {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1fr);
+  grid-template-areas: "news pubs side"; gap: 40px; padding-bottom: 64px;
+}
+.news { grid-area: news; } .pubs { grid-area: pubs; } .side { grid-area: side; }
+.body section + section { margin-top: 2.2em; }
+.news li { margin-bottom: 1.1em; }
+.news time { font-weight: 600; color: var(--strong); font-variant-numeric: tabular-nums; }
+.tight li { margin-bottom: .45em; }
+.side ul.tight + p { margin-top: 1em; }
+.side .sub { color: var(--muted); display: block; font-size: 14px; }
+
+/* ---------- publications ---------- */
+.paper { margin-bottom: 1.25em; }
+.paper .title { font-weight: 600; color: var(--strong); display: block; }
+a.title { color: var(--link); }
+.paper .authors { display: block; }
+.paper .conf { color: var(--muted); font-style: italic; }
+.paper .conf a { color: inherit; }
+
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-block: 18px 28px; }
+
+@media (max-width: 1000px) {
+  .body { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); grid-template-areas: "pubs pubs" "news side"; }
+}
+@media (max-width: 640px) {
+  .who { font-size: 21px; }
+  .body { grid-template-columns: 1fr; grid-template-areas: "pubs" "news" "side"; }
+  .focus { padding: 18px; }
+}
 </style>
-</HEAD> 
-<font face="Helvetica" size ="-1"/>
-</head><body style="margin-top:0;margin-left:10;margin-right:10;" bgcolor="white"><h2><b>Rana Alotaibi</b></h2>
+</head>
+<body>
 
-<p align="justify" style="font-size: 18px;margin-right: 20px" > 
-  I am a Senior Scientist in <a href="https://azuredata.microsoft.com/labs/gsl"> Microsoft Gray Systems Lab (GSL)</a>, working at the intersection of database theory and big data management systems. 
-  I obtained my Ph.D. in Computer Science from the <a href="http://ucsd.edu/"> University of California, San Diego</a>, under the supervision of <a class="current" href="http://db.ucsd.edu/People/alin/">Prof.Alin Deutsch</a>. While at UCSD, I was a member of <a class="current" href="https://dbucsd.github.io/"> the Database Lab</a> and <a class="current" href="https://cns.ucsd.edu/">Center for Networked Systems</a>.
-  My research focuses on semantic query optimizations in hybrid stores, solutions for enabling unified query optimization across different engines, languages/models for integrating disparate data, and scalable self-tuning big data management systems.
-</p>
-<p align="justify" style="font-size: 16px;margin-right: 20px"><strong>Contact</strong>: [fullname without space]@microsoft[dot]com</p>
-<p align="justify" style="font-size: 16px;margin-right: 20px"><a href="https://dblp.org/pid/243/2494.html"> DBLP</a> | <a href="https://scholar.google.com/citations?hl=en&user=0A78SukAAAAJ"> Google Scholar</a> </p>
-
- <HR> 
-    <p><b><h3>News</h3></b> 
-    <ul>
-        <li><p style="font-size: 16px"> 6/2024 - Our workload forecasting project was highlighted in the <a href="https://www.microsoft.com/en-us/research/blog/sibyl-a-machine-learning-based-framework-for-forecasting-dynamic-workloads/">Microsoft Research Blog!</a></li>
-        <li><p style="font-size: 16px"> 10/2023 - Our work on workload forecasting got accepted at SIGMOD 24!</li>
-        <li><p style="font-size: 16px"> 10/2023 - I presented my work on semantic query optimization in modern hybrid stores at <a href="https://uwplse.org/"> University of Washington PLSE Group</a></li>
-        <li><p style="font-size: 16px"> 03/2023 - I serve as a member of the program committee VLDB 2023 -  Industrial Track</li>
-        <li><p style="font-size: 16px"> 12/2022 - I serve as a member of the program committee SIGMOD 2024 </li>
-        <li><p style="font-size: 16px"> 07/2022 - I joined  <a href="https://azuredata.microsoft.com/labs/gsl"> Microsoft Gray Systems Lab (GSL)</a> as a Senior Scientist </li>
-        <li><p style="font-size: 16px"> 05/2022 - I defened my Ph.D in the spring of 2022!</li>
-        <li><p style="font-size: 16px"> 03/2022 - Ioana Manolescu presented our work HADAD at  University of Oxford, <a href=https://www.cs.ox.ac.uk/seminars/2464.html>Data and Knowledge Seminar</a></li>
-        <li><p style="font-size: 16px"> 07/2021 - HADAD and ESTOCADA are presented in Huawei Cloud InnovWave Conference 2021</li>
-        <li><p style="font-size: 16px"> 03/2021 - Our paper on optimizing hybrid analytical tasks is accepted to SIGMOD 2021</li>
-        <li><p style="font-size: 16px"> 01/2021 - I will be joining <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/"> Microsoft Gray Systems Lab </a>  this summer as a research intern. Looking forward to a great summer! </li>
-        <li><p style="font-size: 16px"> 03/2021 - Presented our work Towards Scalable Polystore Systems at  Microsoft Gray Systems Lab (invited talk)</li>
-        <li><p style="font-size: 16px"> 05/2020 - ESTOCADA demo has been accepted to VLDB 2020</li>
-    </ul> 
-<HR> 
-<p><b><h3>Eduction</h3></b>
-    <ul>
-        <li><p style="font-size: 16px"> University of California, San Diego: Doctor of Philosophy in Computer Science, 2017.09 - 2022.06</li>
-        <li><p style="font-size: 16px"> University of California, San Diego: Master of Computer Science, 2014.9 - 2016.6</li>
-        <li><p style="font-size: 16px"> Imam Muhammad Ibn Saud University: Bachelor of Computer Science & Information System, 2006.9 - 2011.6</li>
-    </ul> 
-<HR> 
-<p><b><h3>Professional Service</h3></b>
-    <ul>
-        <li><p style="font-size: 16px"> Program Committee Member: 
-            <a href="https://ieee-icde.org/2025/program-committees/">ICDE 25</a>
-            <a href="https://2025.sigmod.org/org_sigmod_pc.shtml">SIGMOD 25</a>, <a href="https://2024.sigmod.org/org_sigmod_pc.shtml">SIGMOD 24</a>, <a href="https://icde2024.github.io/CFP_demos.html">ICDE (DEMO) 24</a>, <a href="https://vldb.org/2023/?call-for-industrial-track">VLDB 23</a>, <a href="https://www.wis.ewi.tudelft.nl/dbml2023">DBML@ICDE 23</a>, <a href="https://www.wis.ewi.tudelft.nl/dbml2022#program"> DBML@ICDE 22 </a></li>
-        <li><p style="font-size: 16px"> External Reviewer: <a href="https://2022.sigmod.org/">SIGMOD 22</a></li>
-        <li><p style="font-size: 16px"> Mentorship: <a href="https://pages.cs.wisc.edu/~hangdong/"> Hangdong Zhao</a> (GSL Internship'24), <a href="https://stefan-grafberger.com/"> Stefan Grafberger</a> (GSL Summer Internship'23),  <a href="https://yifei-yang7.github.io/"> Yifei Yang</a> (MS, CSE UCSD), Ray Andrus (BS, CSE UCSD)</li>
-    </ul> 
-
-<HR> 
-<p><b><h3>Professional Experince</h3></b>
-    <div class="employment">
-        <p class="company">Microsoft, Redmond, WA </p>
-        <ul>
-          <li>Team: <a href="https://azuredata.microsoft.com/labs/gsl"> Microsoft Research Gray Systems Lab (GSL)</a></li>
-          <li>Senior Scientist, 2022.7 - Present</li>
-        </ul>
-    </div>
-    <div class="employment">
-        <p class="company">Microsoft, Redmond, WA </p>
-        <ul>
-          <li>Team: <a href="https://azuredata.microsoft.com/labs/gsl"> Microsoft Research Gray Systems Lab (GSL)</a></li>
-          <li>Ph.D. Research Intern, 2021.6 - 2021.9</li>
-          <li>Generalized views support in Analytics Job Service at Microsoft</li>
-          <li>Mentors: <a href="https://www.microsoft.com/en-us/research/people/jyleeka/">Jyoti Leeka</a> and <a href="https://www.microsoft.com/en-us/research/people/brhaynes/">Brandon Haynes</a> | Manager: <a href="https://alekh.org/"> Alekh Jindal</a>
-        </ul>
-    </div>
-    <div class="employment">
-        <p class="company">IBM Research Almaden Center, San Jose, CA </p>
-        <ul>
-          <li>Team: <a href="https://research.ibm.com/labs/almaden/"> Database Group</a> </li>
-          <li>Ph.D. Research Intern, 2018.6 - 2018.9</li>
-          <li>Desgined and developed an ontology-driven approach for property graph schema design for domain-specific knowledge graphs</li>
-          <li>Mentor: <a href="https://leichuan.github.io/"> Chuan Lei</a> | Manager: <a href="https://techsysinfra.google/research/srg-staff/fatma-ozcan/"> Fatma Ozcan</a> 
-        </ul>
-    </div>
-    <div class="employment">
-        <p class="company">IBM Research Almaden Center, San Jose, CA </p>
-        <ul>
-          <li>Team: <a href="https://research.ibm.com/labs/almaden/"> Database Group</a> </li>
-          <li>Ph.D. Research Intern, 2017.6 - 2017.12</li>
-          <li>Desgined and developed a workload-aware data placement and querying of domain-specific knowledge bases with hybrid data stores</li>
-          <li>Mentor: <a href="https://www.linkedin.com/in/abdulquamar/"> Abdul Quamar</a> | Manager: <a href="https://techsysinfra.google/research/srg-staff/fatma-ozcan/"> Fatma Ozcan</a> 
-        </ul>
-    </div>
-    <div class="employment">
-        <p class="company"> Inria De Saclay, France</p>
-        <ul>
-          <li>Team: <a href="https://team.inria.fr/cedar/"> CEDAR</a></li>
-          <li>Research Intern, 2016.8 - 2016.10</li>
-          <li>Designed and developed a cross-model integration query language, which allows simultaneous access to various data stores and models such as documents, key-value, relational, etc</li>
-          <li>Mentor:<a href="https://www.linkedin.com/in/damian-bursztyn-096860124/"> Damian Bursztyn</a>| Manager: <a href="http://pages.saclay.inria.fr/ioana.manolescu/"> Ioana Manolescu</a> 
-        </ul>
+<div class="band">
+  <div class="wrap header">
+    <h1 class="who">Rana Alotaibi</h1>
+    <p class="role">Co-founder (Stealth Mode)</p>
+    <div class="profiles">
+      <a href="https://scholar.google.com/citations?hl=en&amp;user=0A78SukAAAAJ">Google Scholar</a>
+      <a href="https://dblp.org/pid/243/2494.html">DBLP</a>
     </div>
 
-<HR> 
-<p><b><h3>Papers</h3></b>
-    <ul style="font-size: 16px">
-        <li>
-        <p><b>MLOS in Action: Bridging the Gap Between Experimentation and Auto-Tuning in the Cloud</b>
-        <br>Brian Kroth, Sergiy Matusevych, Rana Alotaibi, Yiwen Zhu, Anja Gruenheid, Yuanyuan Tian
-        <br><i><a href="https://vldb.org/2024/?papers-demo">VLDB 2024</a></i>
+    <div class="bio">
+      <h2>Bio</h2>
+      <p>With over a decade of experience in research and developing data analytics platforms, Rana Alotaibi is currently co-founding a startup operating in stealth mode and is an Assistant Professor at KACST. Previously, she was a Senior Scientist at <a href="https://azuredata.microsoft.com/labs/gsl">Microsoft Gray Systems Lab (GSL)</a> in Redmond, WA, where she focused on query optimization within Microsoft Fabric's unified Lakehouse ecosystem to accelerate cloud analytics. She began her career at <a href="https://research.ibm.com/labs/almaden/">IBM Almaden Research Center</a> in San Jose, CA, working on query optimization for hybrid data stores.</p>
+      <p>Alotaibi earned her Ph.D. and M.Sc. in Computer Science from <a href="http://ucsd.edu/">UC San Diego</a>, specializing in semantic query optimization for data systems. Her research has been published in leading conferences, including SIGMOD, VLDB, ICDE, and CIDR. She holds five U.S. patents and, together with a distinguished team of data systems scientists, received the Microsoft Patent Award in both 2023 and 2024. She also actively contributes to the research community by serving on the program committees of leading data systems conferences, including SIGMOD and VLDB.</p>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="focus">
+    <h2>Research</h2>
+    <p>Research focuses on <strong>query and workload optimization</strong>, <strong>autonomous data services</strong>, and <strong>data systems storage</strong>.</p>
+  </div>
+
+  <div class="body">
+    <aside class="news">
+      <h2>Recent News</h2>
+      <ul>
+        <li><time>2026</time>: Exciting news: I'm co-founding a startup, currently in stealth mode. Stay tuned!</li>
+        <li><time>2026</time>: Our work on <a href="https://www.cidrdb.org/cidr2026/papers/p29-zhao.pdf">Bitmap Filters</a> got accepted at CIDR 2026!</li>
+        <li><time>2025</time>: Our work on <a href="https://vldb.org/cidrdb/papers/2025/p5-alotaibi.pdf">Query Optimizer as a Service</a> got accepted at CIDR 2025!</li>
+        <li><time>Jun 2024</time>: Our workload forecasting project was highlighted in the <a href="https://www.microsoft.com/en-us/research/blog/sibyl-a-machine-learning-based-framework-for-forecasting-dynamic-workloads/">Microsoft Research Blog</a>!</li>
+        <li><time>Oct 2023</time>: Our work on workload forecasting was accepted at SIGMOD 2024.</li>
+        <li><time>Oct 2023</time>: Presented my work on semantic query optimization in modern hybrid stores at the <a href="https://uwplse.org/">University of Washington PLSE Group</a>.</li>
+        <li><time>Mar 2023</time>: Serving on the VLDB 2023 Industrial Track program committee.</li>
+        <li><time>Dec 2022</time>: Serving on the SIGMOD 2024 program committee.</li>
+        <li><time>Jul 2022</time>: Joined <a href="https://azuredata.microsoft.com/labs/gsl">Microsoft Gray Systems Lab</a> as a Senior Scientist.</li>
+        <li><time>May 2022</time>: Defended my Ph.D.!</li>
+        <li><time>Mar 2022</time>: Ioana Manolescu presented our work HADAD at the University of Oxford <a href="https://www.cs.ox.ac.uk/seminars/2464.html">Data and Knowledge Seminar</a>.</li>
+        <li><time>Jul 2021</time>: HADAD and ESTOCADA were presented at the Huawei Cloud InnovWave Conference 2021.</li>
+        <li><time>Mar 2021</time>: Our paper on optimizing hybrid analytical tasks was accepted to SIGMOD 2021.</li>
+        <li><time>Mar 2021</time>: Invited talk on Towards Scalable Polystore Systems at Microsoft Gray Systems Lab.</li>
+        <li><time>Jan 2021</time>: Joining <a href="https://www.microsoft.com/en-us/research/group/gray-systems-lab/">Microsoft Gray Systems Lab</a> this summer as a research intern.</li>
+        <li><time>May 2020</time>: ESTOCADA demo accepted to VLDB 2020.</li>
+      </ul>
+    </aside>
+
+    <main class="pubs">
+      <h2>Publications</h2>
+      <ol id="papers">
+        <li class="paper">
+          <a class="title" href="https://www.cidrdb.org/cidr2026/papers/p29-zhao.pdf">I Can't Believe It's Not Yannakakis: Pragmatic Bitmap Filters in Microsoft SQL Server</a>
+          <span class="authors">Hangdong Zhao, Yuanyuan Tian, <b>Rana Alotaibi</b>, Bailu Ding, Nicolas Bruno, Jesús Camacho-Rodríguez, Vassilis Papadimos, Ernesto Cervantes Juárez, César A. Galindo-Legaria, Carlo Curino</span>
+          <span class="conf">CIDR 2026</span>
         </li>
-        <li>
-        <p><b>SIBLY: Characterizing and Forecasting Evolving Query Workloads</b>
-        <br>Hanxian Huang, Tarique Siddiqui, Rana Alotaibi, Carlo Curino, Jyoti Leeka, Alekh Jindal, Jishen Zhao, Jes’us Camacho-Rodr ́ıguez, Yuanyuan Tian
-        <br><i><a href="https://2024.sigmod.org/">SIGMOD 2024</a></i>
+        <li class="paper">
+          <a class="title" href="https://vldb.org/cidrdb/papers/2025/p5-alotaibi.pdf">Towards Query Optimizer as a Service (QOaaS) in a Unified LakeHouse Ecosystem: Can One QO Rule Them All?</a>
+          <span class="authors"><b>Rana Alotaibi</b>, Yuanyuan Tian, Stefan Grafberger, Jesús Camacho-Rodríguez, Nicolas Bruno, Brian Kroth, Sergiy Matusevych, Ashvin Agrawal, Mahesh Behera, Ashit Gosalia, César A. Galindo-Legaria, Milind Joshi, Milan Potocnik, Beysim Sezgin, Xiaoyu Li, Carlo Curino</span>
+          <span class="conf">CIDR 2025</span>
         </li>
-        <li>
-        <p><b>NL2SQL is a solved problem... Not!</b>
-        <br>Avrilia Floratou, Fotis Psallidas, Fuheng Zhao, Shaleen Deep, Gunther Hagleither, Wangda Tan, Joyce Cahoon, Rana Alotaibi, 
-        <br>Jordan Henkel, Abhik Singla, Alex Van Grootel, Brandon Chow, Kai Deng, Katherine Lin, Marcos Campos, Venkatesh Emani,
-        <br>Vivek Pandit, Victor Shnayder, Wenjing Wang, Carlo Curino
-        <br><i><a href="https://www.cidrdb.org/cidr2024/papers/p74-floratou.pdf">CIDR 2024</a></i>
+        <li class="paper">
+          <a class="title" href="https://vldb.org/2024/?papers-demo">MLOS in Action: Bridging the Gap Between Experimentation and Auto-Tuning in the Cloud</a>
+          <span class="authors">Brian Kroth, Sergiy Matusevych, <b>Rana Alotaibi</b>, Yiwen Zhu, Anja Gruenheid, Yuanyuan Tian</span>
+          <span class="conf">VLDB 2024 (Demo)</span>
         </li>
-        <li>
-        <p><b>Towards Building Autonomous Data Services on Azure</b> <a href="https://dl.acm.org/doi/10.1145/3555041.3589674">Paper</a>
-        <br> The GSL Team
-        <br><i><a href="https://2023.sigmod.org/">SIGMOD 2023</a></i>
+        <li class="paper">
+          <a class="title" href="https://www.microsoft.com/en-us/research/blog/sibyl-a-machine-learning-based-framework-for-forecasting-dynamic-workloads/">SIBYL: Characterizing and Forecasting Evolving Query Workloads</a>
+          <span class="authors">Hanxian Huang, Tarique Siddiqui, <b>Rana Alotaibi</b>, Carlo Curino, Jyoti Leeka, Alekh Jindal, Jishen Zhao, Jesús Camacho-Rodríguez, Yuanyuan Tian</span>
+          <span class="conf">SIGMOD 2024</span>
         </li>
-        <li>
-        <p><b>Heterogeneous Data Management Revisited: from Mediators to Modern Polystores</b>
-        <br> Rana Alotaibi, Maxime Buron, Alin Deutsch, Fran ̧cois Goasdou ́ee and Ioana Manolescu
-        <br><i><a href="https://bda2021.inria.fr/files/2021/10/MDD-School-Poster-surplace.pdf">French Summer School on Massive Distributed Data (MDD) 2022</a></i>
+        <li class="paper">
+          <a class="title" href="https://www.cidrdb.org/cidr2024/papers/p74-floratou.pdf">NL2SQL is a solved problem... Not!</a>
+          <span class="authors">Avrilia Floratou, Fotis Psallidas, Fuheng Zhao, Shaleen Deep, Gunther Hagleither, Wangda Tan, Joyce Cahoon, <b>Rana Alotaibi</b>, Jordan Henkel, Abhik Singla, Alex Van Grootel, Brandon Chow, Kai Deng, Katherine Lin, Marcos Campos, Venkatesh Emani, Vivek Pandit, Victor Shnayder, Wenjing Wang, Carlo Curino</span>
+          <span class="conf">CIDR 2024</span>
         </li>
-        <li>
-        <p><b>HADAD:A Lightweight Approach for Optimizing Hybrid Complex Analytics Queries</b> <a href="https://dl.acm.org/doi/10.1145/3448016.3457311">Paper</a>
-        <br> Rana Alotaibi, Bogdan Cautis, Alin Deutsch, Ioana Manolescu
-        <br><i><a href="https://2021.sigmod.org/">SIGMOD 2021</a></i>
+        <li class="paper">
+          <a class="title" href="https://dl.acm.org/doi/10.1145/3555041.3589674">Towards Building Autonomous Data Services on Azure</a>
+          <span class="authors">The GSL Team</span>
+          <span class="conf">SIGMOD 2023 (Industry)</span>
         </li>
-        <li>
-        <p><b>HERMES: Data Placement and Schema Optimization for Enterprise knowledge bases</b> <a href="https://research.ibm.com/publications/hermes-data-placement-and-schema-optimization-for-enterprise-knowledge-bases">Paper</a>
-        <br> Chuan Lei, Abdul Quamar, Vasilis Efthymiou, Fatma Özcan, Rana Alotaibi
-        <br><i><a href="https://link.springer.com/journal/778">The VLDB Joural 2021</a></i>
+        <li class="paper">
+          <a class="title" href="https://bda2021.inria.fr/files/2021/10/MDD-School-Poster-surplace.pdf">Heterogeneous Data Management Revisited: from Mediators to Modern Polystores</a>
+          <span class="authors"><b>Rana Alotaibi</b>, Maxime Buron, Alin Deutsch, François Goasdoué, Ioana Manolescu</span>
+          <span class="conf">French Summer School on Massive Distributed Data (MDD) 2022</span>
         </li>
-        <li>
-        <p><b>Property Graph Schema Optimization for Domain-Specific Knowledge Graphs</b> <a href="https://ieeexplore.ieee.org/abstract/document/9458757">Paper</a>
-        <br>Rana Alotaibi, Chuan Lei, Abdual Quamar, Vasilis Efthymiou and Fatma O ̈zcan
-        <br><i><a href="https://dblp.org/db/conf/icde/icde2021.html">ICDE 2021</a></i>
+        <li class="paper">
+          <a class="title" href="https://dl.acm.org/doi/10.1145/3448016.3457311">HADAD: A Lightweight Approach for Optimizing Hybrid Complex Analytics Queries</a>
+          <span class="authors"><b>Rana Alotaibi</b>, Bogdan Cautis, Alin Deutsch, Ioana Manolescu</span>
+          <span class="conf">SIGMOD 2021</span>
         </li>
-        <li>
-        <p><b>ESTOCADA: Towards Scalable Polystore Systems</b> <a href="https://dl.acm.org/doi/abs/10.14778/3415478.3415516">Paper</a>
-        <br>Rana Alotaibi, Bogdan Cautis, Alin Deutsch, Moustafa Latrache, Ioana Manolescu and Yifei Yang
-        <br><i><a href="https://vldb2020.org/">VLDB 2020</a></i>
+        <li class="paper">
+          <a class="title" href="https://research.ibm.com/publications/hermes-data-placement-and-schema-optimization-for-enterprise-knowledge-bases">HERMES: Data Placement and Schema Optimization for Enterprise Knowledge Bases</a>
+          <span class="authors">Chuan Lei, Abdul Quamar, Vasilis Efthymiou, Fatma Özcan, <b>Rana Alotaibi</b></span>
+          <span class="conf">The VLDB Journal 2021</span>
         </li>
-        <li>
-        <p><b>Towards Scalable Hybrid Stores: Constraint-based Rewriting to the Rescue</b> <a href="https://dl.acm.org/doi/abs/10.14778/3415478.3415516">Paper</a>
-        <br>Rana Alotaibi, Bogdan Cautis, Alin Deutsch, Moustafa Latrache, Ioana Manolescu and Yifei Yang
-        <br><i><a href="https://sigmod2019.org/">SIGMOD 2019</a></i>
+        <li class="paper">
+          <a class="title" href="https://ieeexplore.ieee.org/abstract/document/9458757">Property Graph Schema Optimization for Domain-Specific Knowledge Graphs</a>
+          <span class="authors"><b>Rana Alotaibi</b>, Chuan Lei, Abdul Quamar, Vasilis Efthymiou, Fatma Özcan</span>
+          <span class="conf">ICDE 2021</span>
         </li>
-        </ul> 
-<HR> 
-<p><b><h3> Talks</h3></b> 
-    <ul style="font-size: 16px">
-        <li>
-        <p><b>HADAD:A Lightweight Approach for Optimizing Hybrid Complex Analytics Queries</b>
-        <br><i><a href="https://uwplse.org/">University of Washington, Seattle - PLSE & Database group (Invited) - 2023</a></i>
-        <br><i><a href="https://2021.sigmod.org/">ACM SIGMOD  Xi’an, Shaanxi, China  - 2021</a></i>
-        <br><i><a href="https://azuredata.microsoft.com/labs/gsl">Microsoft Gray Systems Lab (GSL) - 2021</a></i>
+        <li class="paper">
+          <a class="title" href="https://dl.acm.org/doi/abs/10.14778/3415478.3415516">ESTOCADA: Towards Scalable Polystore Systems</a>
+          <span class="authors"><b>Rana Alotaibi</b>, Bogdan Cautis, Alin Deutsch, Moustafa Latrache, Ioana Manolescu, Yifei Yang</span>
+          <span class="conf">VLDB 2020 (Demo)</span>
         </li>
-        <li>
-        <p><b>Generalized Computation Reuse Framework in Analytics Job Service at Microsoft</b>
-        <br><i><a href="https://azuredata.microsoft.com/labs/gsl">Microsoft Gray Systems Lab (GSL) - 2021</a></i>
+        <li class="paper">
+          <a class="title" href="https://dl.acm.org/doi/abs/10.14778/3415478.3415516">Towards Scalable Hybrid Stores: Constraint-based Rewriting to the Rescue</a>
+          <span class="authors"><b>Rana Alotaibi</b>, Bogdan Cautis, Alin Deutsch, Moustafa Latrache, Ioana Manolescu, Yifei Yang</span>
+          <span class="conf">SIGMOD 2019</span>
         </li>
-        <li>
-        <p><b>Towards Scalable Hybrid Stores</b>
-        <br><i><a href="https://www.microsoft.com/en-us/research/">Microsoft Research Talk Series (Invited) - 2020</a></i>
-        </li>
-        <li>
-        <p><b>ESTOCADA Scalable Hybrid Stores: Constraint-Based Rewriting to the Rescue</b>
-        <br><i><a href="https://sigmod2019.org/">ACM SIGMOD Amsterdam, Netherlands - 2019</a></i>
-        <br><i><a href="https://cns.ucsd.edu/">UCSD CNS Research Review - 2019</a></i>
-        <br><i><a href="https://cse.ucsd.edu/">UCSD CSE Open Research House -2019</a></i>
-        </li>
-        <li>
-        <p><b>Workload-aware Data Placement and Querying of Knowledge-bases over Hybrid Stores</b>
-        <br><i><a href="https://research.ibm.com/labs/almaden">Database Group IBM Research, Almaden - 2017</a></i>
-        </li>
-        </ul> 
-</tr>       
-</body></htmtbody>
+      </ol>
+    </main>
+
+    <aside class="side">
+      <section>
+        <h2>Experience</h2>
+        <ul class="tight">
+          <li><b>Startup (Stealth Mode)</b><span class="sub">Co-founder, 2025 – present</span></li>
+          <li><b>KACST</b><span class="sub">Assistant Professor, 2025 – present</span></li>
+          <li><b>SDAIA (NCAI)</b><span class="sub">Director &amp; Data Ecosystem Consultant, 2024 – 2025</span></li>
+          <li><b>Microsoft Gray Systems Lab</b><span class="sub">Senior Scientist, 2022 – 2024</span></li>
+          <li><b>Microsoft Gray Systems Lab</b><span class="sub">Ph.D. Research Intern, 2021. Generalized views in Analytics Job Service. Mentors: <a href="https://www.microsoft.com/en-us/research/people/jyleeka/">Jyoti Leeka</a>, <a href="https://www.microsoft.com/en-us/research/people/brhaynes/">Brandon Haynes</a></span></li>
+          <li><b>IBM Research Almaden</b><span class="sub">Ph.D. Research Intern, 2018. Property graph schema design for knowledge graphs. Mentors: <a href="https://leichuan.github.io/">Chuan Lei</a>, <a href="https://techsysinfra.google/research/srg-staff/fatma-ozcan/">Fatma Özcan</a></span></li>
+          <li><b>IBM Research Almaden</b><span class="sub">Ph.D. Research Intern, 2017. Workload-aware data placement over hybrid stores. Mentors: <a href="https://www.linkedin.com/in/abdulquamar/">Abdul Quamar</a>, <a href="https://techsysinfra.google/research/srg-staff/fatma-ozcan/">Fatma Özcan</a></span></li>
+          <li><b>Inria Saclay, CEDAR</b><span class="sub">Research Intern, 2016. Cross-model integration query language. Manager: <a href="http://pages.saclay.inria.fr/ioana.manolescu/">Ioana Manolescu</a></span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Education</h2>
+        <ul class="tight">
+          <li><b>Ph.D., Computer Science</b><span class="sub">UC San Diego, 2017 – 2022</span></li>
+          <li><b>M.S., Computer Science</b><span class="sub">UC San Diego, 2014 – 2016</span></li>
+          <li><b>B.S., Computer Science &amp; Information Systems</b><span class="sub">Imam Muhammad Ibn Saud University, 2006 – 2011</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Awards</h2>
+        <ul class="tight">
+          <li><b>Microsoft Patent Innovation Award</b><span class="sub">2023, 2024</span></li>
+          <li><b>KACST Ph.D. and M.Sc. Graduate Fellowship</b></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Service</h2>
+        <p style="margin-bottom:.4em">Program Committee:</p>
+        <ul class="tight">
+          <li><b>ACM SIGMOD/PODS</b> 2022, <a href="https://2024.sigmod.org/org_sigmod_pc.shtml">2024</a>, <a href="https://2025.sigmod.org/org_sigmod_pc.shtml">2025</a>, <a href="https://2026.sigmod.org/org_sigmod_pc.shtml">2026</a>, <a href="https://2027.sigmod.org/org_sigmod_pc.shtml">2027</a></li>
+          <li><b>SIGMOD Industrial</b> 2027</li>
+          <li><b>VLDB</b> <a href="https://vldb.org/2023/?call-for-industrial-track">2023</a> (Industrial Track), 2024 (Journal Track), <a href="https://www.vldb.org/pvldb/volumes/19/review-board">2026</a></li>
+          <li><b>IEEE ICDE</b> <a href="https://ieee-icde.org/2025/program-committees/">2025</a></li>
+          <li><b>DBML @ ICDE</b> <a href="https://www.wis.ewi.tudelft.nl/dbml2022#program">2022</a></li>
+        </ul>
+        <p>External Reviewer: <a href="https://2022.sigmod.org/">SIGMOD 22</a></p>
+      </section>
+
+      <section>
+        <h2>Mentoring</h2>
+        <ul class="tight">
+          <li><a href="https://pages.cs.wisc.edu/~hangdong/">Hangdong Zhao</a> (GSL intern ’24)<span class="sub">Now at Microsoft</span></li>
+          <li><a href="https://stefan-grafberger.com/">Stefan Grafberger</a> (GSL intern ’23)<span class="sub">Now at Snowflake</span></li>
+          <li><a href="https://yifei-yang7.github.io/">Yifei Yang</a> (M.S., UCSD)<span class="sub">Now at Databricks</span></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Talks</h2>
+        <ul class="tight">
+          <li><b>Autonomous data services</b><span class="sub">Tamara SandBox (invited), 2025</span></li>
+          <li><b>AI data engineering</b><span class="sub">King Salman Global Academy for Arabic Language (invited), 2025</span></li>
+          <li><b>HADAD: a lightweight approach for optimizing hybrid complex analytics queries</b><span class="sub"><a href="https://uwplse.org/">University of Washington, Seattle, PLSE &amp; Database Group</a> (invited), 2023 · <a href="https://2021.sigmod.org/">ACM SIGMOD</a>, Xi'an, Shaanxi, China (virtual), 2021 · Microsoft Research Gray Systems Lab (invited), 2021</span></li>
+          <li><b>Generalized computation reuse framework in analytics job service at Microsoft</b><span class="sub">Microsoft Gray Systems Lab, 2021</span></li>
+          <li><b>Towards scalable hybrid stores</b><span class="sub">Microsoft Research Talk Series (invited), 2020</span></li>
+          <li><b>Estocada scalable hybrid stores: constraint-based rewriting to the rescue</b><span class="sub"><a href="https://sigmod2019.org/">ACM SIGMOD</a>, Amsterdam, Netherlands, 2019 · UCSD CNS Research Review, 2019 · UCSD Open Research House, 2021</span></li>
+          <li><b>Ontology-driven property graph schema design for domain-specific knowledge</b><span class="sub">Database Group, IBM Research, Almaden, CA, 2018</span></li>
+          <li><b>Workload-aware data placement and querying of knowledge bases over hybrid stores</b><span class="sub">Database Group, IBM Research, Almaden, CA, 2017</span></li>
+        </ul>
+      </section>
+    </aside>
+  </div>
+</div>
+
+<footer class="wrap">Last updated October 2026</footer>
+
+</body>
+</html>
